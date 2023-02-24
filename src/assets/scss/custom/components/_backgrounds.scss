@@ -1,0 +1,13 @@
+// 
+// backgrounds.scss
+//
+
+
+@each $color,
+$value in $theme-colors {
+    .bg-#{$color} {
+        &.bg-soft{
+            background-color:#f5e4c4!important;
+        }
+    }
+}
