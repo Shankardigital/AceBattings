@@ -96,7 +96,7 @@ const SidebarContent = props => {
             <li>
               <Link to="/dashboard" >
                 <i className="bx bx-home-circle"></i>
-               
+
                 <span>{props.t("Dashboards")}</span>
               </Link>
               {/* <ul className="sub-menu">
@@ -118,33 +118,49 @@ const SidebarContent = props => {
             <li>
               <Link to="/users" >
                 <i className="bx bx-user-circle"></i>
-               
+
                 <span>{props.t("User Management")}</span>
               </Link>
-              </li>
+            </li>
             <li>
               <Link to="/plans" >
                 <i className="bx bxs-package"></i>
-               
+
                 <span>{props.t("Plans / Packages")}</span>
               </Link>
-              </li>
+            </li>
             <li>
               <Link to="/subscribe" >
                 <i className="bx bx-user-check"></i>
-               
+
                 <span>{props.t("Subscribes")}</span>
               </Link>
-              </li>
+            </li>
             <li>
               <Link to="/banners" >
                 <i className="bx bx-image-add"></i>
-               
+
                 <span>{props.t("Banners")}</span>
               </Link>
-              </li>
+            </li>
 
-              {/* <li>
+            <li>
+              <Link to="/#" className="has-arrow">
+                <i className="bx bx-tone" />
+                <span>{props.t("Lanes")}</span>
+              </Link>
+              <ul className="sub-menu">
+                <li>
+                  <Link to="/lanes">{props.t("Add Lanes")}</Link>
+                </li>
+                <li>
+                  <Link to="/lane_booking">{props.t("Lane Booking")}</Link>
+                </li>
+              </ul>
+            </li>
+
+
+            {/* <li>
               <Link to="/calendar" >
                 <i className="bx bx-calendar"></i>
                 <span>{props.t("Calendar")}</span>

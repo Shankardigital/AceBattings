@@ -178,6 +178,9 @@ import Subscribe from "../pages/Acefolders/Subscribe";
 import Banners from "../pages/Acefolders/Banners";
 import Booking from "../pages/Acefolders/Booking";
 
+import Planes from "../pages/Booking/Planes";
+import Lanebooking from "../pages/Booking/Lanebooking";
+
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: Dashboard },
@@ -257,6 +260,12 @@ const authProtectedRoutes = [
   { path: "/subscribe", component: Subscribe },
   { path: "/banners", component: Banners },
   { path: "/sellaplan", component: Booking },
+
+
+  { path: "/lanes", component: Planes },
+  { path: "/lane_booking", component: Lanebooking },
+
+
 
 
 

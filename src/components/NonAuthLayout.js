@@ -14,5 +14,3 @@ NonAuthLayout.propTypes = {
 }
 
 export default withRouter(NonAuthLayout)
-
-//test

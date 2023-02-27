@@ -6,7 +6,7 @@ import { Row, Col, Card, CardBody, CardTitle, CardSubtitle, Input, Button, Table
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
-import img1 from "../../assets/images/letast/acelogo.png"
+// import img1 from "../../assets/images/letast/acelogo.png"
 
 const ResponsiveTables = () => {
 
@@ -19,7 +19,7 @@ const ResponsiveTables = () => {
         <React.Fragment>
             <div className="page-content">
                 <div className="container-fluid">
-                    <Breadcrumbs title="Banners" breadcrumbItem="Banners" />
+                    <Breadcrumbs title="Lanes" breadcrumbItem="Lanes" />
                     <Row>
                         <Col md={4}>
                             <Card className="p-4">
@@ -31,8 +31,8 @@ const ResponsiveTables = () => {
                                             <Input required type="text" placeholder="Enter Name" />
                                         </div>
                                         <div className="mt-3">
-                                            <Label>Images</Label>  <span className="text-danger">*</span>
-                                            <Input required type="file" placeholder="Enter Last Name" />
+                                            <Label>Lane Number</Label>  <span className="text-danger">*</span>
+                                            <Input required type="text" placeholder="Enter Number" />
                                         </div>
 
                                     </div>
@@ -75,7 +75,7 @@ const ResponsiveTables = () => {
                                                         Name
                                                     </th>
                                                     <th>
-                                                        Images
+                                                        Lane Number
                                                     </th>
                                                     <th>
                                                         Status
@@ -94,7 +94,8 @@ const ResponsiveTables = () => {
                                                         Mark
                                                     </td>
                                                     <td>
-                                                        <img src={img1} style={{ width: "80px" }} />
+                                                        5
+                                                        {/* <img src={img1} style={{ width: "80px" }} /> */}
                                                     </td>
 
                                                     <td>
@@ -115,7 +116,7 @@ const ResponsiveTables = () => {
                                                         Jacob
                                                     </td>
                                                     <td>
-                                                        <img src={img1} style={{ width: "80px" }} />
+                                                        7
                                                     </td>
 
                                                     <td>
@@ -136,7 +137,7 @@ const ResponsiveTables = () => {
                                                         Larry
                                                     </td>
                                                     <td>
-                                                        <img src={img1} style={{ width: "80px" }} />
+                                                        8
                                                     </td>
 
                                                     <td>
@@ -159,7 +160,7 @@ const ResponsiveTables = () => {
                 </div>
             </div>
             <Modal isOpen={show1} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Edit Bannerss</ModalHeader>
+                <ModalHeader toggle={toggle}>Edit Lanes</ModalHeader>
                 <ModalBody>
                     <Form>
                         <div>
@@ -168,8 +169,8 @@ const ResponsiveTables = () => {
                                 <Input required type="text" placeholder="Enter Name" />
                             </div>
                             <div >
-                                <Label>Image</Label>  <span className="text-danger">*</span>
-                                <Input required type="file" placeholder="Enter Last Name" />
+                                <Label>Lane Number</Label>  <span className="text-danger">*</span>
+                                <Input required type="text" placeholder="Enter Number" />
                             </div>
 
                         </div>

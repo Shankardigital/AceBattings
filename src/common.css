@@ -1,0 +1,9 @@
+.tableinput{
+    border: none;
+    margin: 0px;
+    width: 90px;
+    height: 40px;
+}
+.tabpad{
+    padding: 1px !important;
+}
