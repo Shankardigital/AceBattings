@@ -7,6 +7,7 @@ import { Row, Col, Card, CardBody, CardTitle, CardSubtitle, Input, Button, Table
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 // import img1 from "../../assets/images/letast/acelogo.png"
+import {Link} from "react-router-dom"
 
 const ResponsiveTables = () => {
 
@@ -19,7 +20,7 @@ const ResponsiveTables = () => {
         <React.Fragment>
             <div className="page-content">
                 <div className="container-fluid">
-                    <Breadcrumbs title="Lane Booking" breadcrumbItem="Lane Booking" />
+                    <Breadcrumbs title="Lanes list" breadcrumbItem="Lanes list" />
                     <Row>
 
                      
@@ -293,9 +294,39 @@ const ResponsiveTables = () => {
                                                 </tr>
                                             </tbody>
                                         </Table>
+
+                                       <div className="text-end">
+                                      <Link to="/lanes">
+                                      <Button style={{width:"120px"}} className="m-1"  color="success">Submit <i className="bx bx-check-circle"></i></Button>
+                                        </Link> 
+                                       </div>
                                     </div>
                                 </CardBody>
                             </Card>
+
+                            {/* <Card className="p-4">
+                               <Row>
+                                <Col md={6}>
+                                <h5>Lane Rental</h5>
+                                <span className="text-secondary" style={{fontSize:"16px", }}>Tue, Feb 28 1:00 AM - 12:00 PM</span>
+                               <Row className="mt-2">
+                                <Col md="3">
+                                <span className="text-secondary" style={{fontSize:"15px", }}>Amount </span><br/>
+                                <span className="text-secondary" style={{fontSize:"15px", }}>Tax (3%) </span><br/><hr/>
+                                <span className="text-secondary" style={{fontSize:"15px", }}>Total</span>
+                                </Col>
+                                <Col md="2">
+                                <span className="text-secondary" style={{fontSize:"15px", }}>:  $ 100</span><br/>
+                                <span className="text-secondary" style={{fontSize:"15px", }}>:  $  03</span><br/><hr/>
+                                <span className="text-secondary" style={{fontSize:"15px", }}>:  $  103</span>
+                                </Col>
+                               </Row>
+                                </Col>
+                                <Col className="text-end" md={6}>
+                                    <Button className="m-5"  color="success">Booking <i className="bx bx-check-circle"></i></Button>
+                                </Col>
+                               </Row>
+                            </Card> */}
                         </Col>
                     </Row>
                 </div>

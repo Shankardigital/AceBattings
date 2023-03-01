@@ -7,6 +7,7 @@ import { Row, Col, Card, CardBody, CardTitle, CardSubtitle, Input, Button, Table
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 // import img1 from "../../assets/images/letast/acelogo.png"
+import {Link} from "react-router-dom"
 
 const ResponsiveTables = () => {
 
@@ -106,6 +107,9 @@ const ResponsiveTables = () => {
                                                     <td>
                                                         <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button>
                                                         <Button size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                        <Link to="/lane_booking">
+                                                        <Button size="sm" className="m-1" outline color="warning"><i style={{ fontSize: " 14px" }} className="fa fa-eye" aria-hidden="true"></i></Button>
+                                                            </Link> 
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -127,6 +131,9 @@ const ResponsiveTables = () => {
                                                     <td>
                                                         <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button>
                                                         <Button size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                        <Link to="/lane_booking">
+                                                        <Button size="sm" className="m-1" outline color="warning"><i style={{ fontSize: " 14px" }} className="fa fa-eye" aria-hidden="true"></i></Button>
+                                                            </Link> 
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -148,6 +155,57 @@ const ResponsiveTables = () => {
                                                     <td>
                                                         <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button>
                                                         <Button size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                        <Link to="/lane_booking">
+                                                        <Button size="sm" className="m-1" outline color="warning"><i style={{ fontSize: " 14px" }} className="fa fa-eye" aria-hidden="true"></i></Button>
+                                                            </Link> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                       4
+                                                    </th>
+                                                    <td>
+                                                        Larry
+                                                    </td>
+                                                    <td>
+                                                        8
+                                                    </td>
+
+                                                    <td>
+                                                        <span className="text-success">
+                                                            Active
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button>
+                                                        <Button size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                        <Link to="/lane_booking">
+                                                        <Button size="sm" className="m-1" outline color="warning"><i style={{ fontSize: " 14px" }} className="fa fa-eye" aria-hidden="true"></i></Button>
+                                                            </Link> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                      5
+                                                    </th>
+                                                    <td>
+                                                        Larry
+                                                    </td>
+                                                    <td>
+                                                        8
+                                                    </td>
+
+                                                    <td>
+                                                        <span className="text-success">
+                                                            Active
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button>
+                                                        <Button size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                        <Link to="/lane_booking">
+                                                        <Button size="sm" className="m-1" outline color="warning"><i style={{ fontSize: " 14px" }} className="fa fa-eye" aria-hidden="true"></i></Button>
+                                                            </Link> 
                                                     </td>
                                                 </tr>
                                             </tbody>

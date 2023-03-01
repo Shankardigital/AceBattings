@@ -180,6 +180,7 @@ import Booking from "../pages/Acefolders/Booking";
 
 import Planes from "../pages/Booking/Planes";
 import Lanebooking from "../pages/Booking/Lanebooking";
+import Laneslist from "../pages/Booking/Laneslist";
 
 
 const authProtectedRoutes = [
@@ -264,6 +265,7 @@ const authProtectedRoutes = [
 
   { path: "/lanes", component: Planes },
   { path: "/lane_booking", component: Lanebooking },
+  { path: "/lanes_list", component: Laneslist },
 
 
 

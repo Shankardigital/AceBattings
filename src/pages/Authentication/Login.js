@@ -30,7 +30,7 @@ import { facebook, google } from "../../config";
 const Login = props => {
 
    //meta title
-  document.title="Login | Ace Batting - React Admin & Dashboard Template";
+  // document.title="Login | Ace Batting - React Admin & Dashboard Template";
 
   const dispatch = useDispatch();
 
@@ -39,7 +39,7 @@ const Login = props => {
     enableReinitialize: true,
 
     initialValues: {
-      email: "admin@themesbrand.com" || '',
+      email: "admin@digitalraiz.com" || '',
       password: "123456" || '',
     },
     validationSchema: Yup.object({

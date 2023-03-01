@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { Row, Col, Card, CardBody, CardTitle, CardSubtitle, Input, Button, Table, Label, Form, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 // import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 // import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
-import { Link } from "react-router-dom";
+
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
-import img1 from "../../assets/images/letast/acelogo.png"
+// import img1 from "../../assets/images/letast/acelogo.png"
 import trash from "../../assets/images/letast/trash.gif"
 
 const ResponsiveTables = () => {
@@ -20,57 +20,14 @@ const ResponsiveTables = () => {
         <React.Fragment>
             <div className="page-content">
                 <div className="container-fluid">
-                    <Breadcrumbs title="Plans / Packages" breadcrumbItem="Plans / Packages" />
+                    <Breadcrumbs title="Booking list" breadcrumbItem="Booking list" />
                     <Row>
-                        <Col>
-                            {/* {show == true ? (
-                                <Card className="p-4">
-                                    <Form>
-                                        <h5>Add New Plan</h5>
-                                        <Row>
-                                            <Col md="3">
-                                                <Label>First Name</Label>  <span className="text-danger">*</span>
-                                                <Input required type="text" placeholder="Enter First Name" />
-                                            </Col>
-                                            <Col md="3">
-                                                <Label>Last Name</Label>  <span className="text-danger">*</span>
-                                                <Input required type="text" placeholder="Enter Last Name" />
-                                            </Col>
-                                            <Col md="3">
-                                                <Label>Email Id</Label> <span className="text-danger">*</span>
-                                                <Input required type="text" placeholder="Enter Email" />
-                                            </Col>
-                                            <Col md="3">
-                                                <Label>Mobile No</Label> <span className="text-danger">*</span>
-                                                <div className="input-group mb-3">
-                                                    <div className="input-group-prepend">
-                                                        <select required className="form-select">
-                                                            <option value="+1">+1 </option>
-                                                            <option value="+1">+91 </option>
-                                                            <option value="+1">+44 </option>
-                                                        </select>
-                                                    </div>
-                                                    <Input required type="text" className="form-control" placeholder="Enter Mobile No" aria-label="Username" aria-describedby="basic-addon1" />
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <div className="text-end">
-                                            <Button type="submit" color="success m-1" outline>Submit <i className="bx bx-check-circle"></i></Button>
-                                            <Button type="button" onClick={() => { setshow(!show) }} color="danger m-1" outline>Cancel <i className="bx bx-x-circle"></i></Button>
-
-                                        </div>
-                                    </Form>
-                                </Card>
-                            ) : (
-                                ""
-                            )} */}
+                        <Col md={12}>
                             <Card>
                                 <CardBody>
                                     <Row>
                                         <Col>
-                                            <Link to="/newplans">
-                                                <Button color="primary" >New Plan <i className="bx bx-plus-circle"></i></Button>
-                                            </Link>
+                                            {/* <Button onClick={() => { setshow(!show) }} color="primary" >New User <i className="bx bx-user-plus"></i></Button> */}
                                         </Col>
                                         <Col>
                                             <div style={{ float: "right" }}>
@@ -78,33 +35,33 @@ const ResponsiveTables = () => {
                                             </div>
                                         </Col>
                                     </Row>
+                                    {/* <CardTitle>Example </CardTitle>
+                  <CardSubtitle className="mb-3">
+                    This is an experimental awesome solution for responsive
+                    tables with complex data.
+                  </CardSubtitle> */}
+
                                     <div className="table-rep-plugin mt-4">
-                                        <Table hover responsive>
+                                        <Table hover bordered responsive>
                                             <thead>
                                                 <tr>
                                                     <th>
                                                         Sl No
                                                     </th>
                                                     <th>
-                                                        Images
+                                                        Date
+                                                    </th>
+                                                    <th>
+                                                        Time
                                                     </th>
                                                     <th>
                                                         Name
                                                     </th>
                                                     <th>
-                                                        Type
+                                                        Lane Number
                                                     </th>
                                                     <th>
-                                                        Game Type
-                                                    </th>
-                                                    <th>
-                                                        Price
-                                                    </th>
-                                                    <th>
-                                                        Ball Credits
-                                                    </th>
-                                                    <th>
-                                                        What's Included
+                                                        Amount
                                                     </th>
                                                     <th>
                                                         Action
@@ -117,59 +74,52 @@ const ResponsiveTables = () => {
                                                         1
                                                     </th>
                                                     <td>
-                                                        <img src={img1} style={{ width: "70px" }} />
+                                                       28-02-23
+                                                    </td>
+                                                    <td>
+                                                        8pm
+                                                    </td>
+                                                    <td>
+                                                        Lane Rental
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                        {/* <img src={img1} style={{ width: "80px" }} /> */}
+                                                    </td>
+                                                    <td>
+                                                       $103
                                                     </td>
 
+                                                    
                                                     <td>
-                                                        Line Rental
-                                                    </td>
-                                                    <td>
-                                                        Line Rental
-                                                    </td>
-                                                    <td>
-                                                        Base Ball
-                                                    </td>
-                                                    <td>
-                                                        $ 20
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10 base Balls
-                                                    </td>
-                                                    <td>
-                                                        <Link to="/editplan"> <Button size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button></Link>
+                                                        {/* <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button> */}
                                                         <Button onClick={toggle} size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">
-                                                        2
+                                                      2
                                                     </th>
                                                     <td>
-                                                        <img src={img1} style={{ width: "70px" }} />
+                                                       28-02-23
                                                     </td>
                                                     <td>
-                                                        Line Rental
+                                                        8pm
                                                     </td>
                                                     <td>
-                                                        Line Rental
+                                                        Lane Rental
                                                     </td>
                                                     <td>
-                                                        Base Ball
+                                                        5
+                                                        {/* <img src={img1} style={{ width: "80px" }} /> */}
                                                     </td>
                                                     <td>
-                                                        $ 20
+                                                       $103
                                                     </td>
+
+                                                    
                                                     <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10 base Balls
-                                                    </td>
-                                                    <td>
-                                                        <Link to="/editplan"> <Button size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button></Link>
+                                                        {/* <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button> */}
                                                         <Button onClick={toggle} size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
                                                     </td>
                                                 </tr>
@@ -178,30 +128,80 @@ const ResponsiveTables = () => {
                                                         3
                                                     </th>
                                                     <td>
-                                                        <img src={img1} style={{ width: "70px" }} />
+                                                       28-02-23
+                                                    </td>
+                                                    <td>
+                                                        8pm
+                                                    </td>
+                                                    <td>
+                                                        Lane Rental
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                        {/* <img src={img1} style={{ width: "80px" }} /> */}
+                                                    </td>
+                                                    <td>
+                                                       $103
                                                     </td>
 
+                                                    
                                                     <td>
-                                                        Line Rental
+                                                        {/* <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button> */}
+                                                        <Button onClick={toggle} size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        4
+                                                    </th>
+                                                    <td>
+                                                       28-02-23
                                                     </td>
                                                     <td>
-                                                        Line Rental
+                                                        8pm
                                                     </td>
                                                     <td>
-                                                        Base Ball
+                                                        Lane Rental
                                                     </td>
                                                     <td>
-                                                        $ 20
+                                                        5
+                                                        {/* <img src={img1} style={{ width: "80px" }} /> */}
                                                     </td>
                                                     <td>
-                                                        10
+                                                       $103
+                                                    </td>
+
+                                                    
+                                                    <td>
+                                                        {/* <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button> */}
+                                                        <Button onClick={toggle} size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        5
+                                                    </th>
+                                                    <td>
+                                                       28-02-23
                                                     </td>
                                                     <td>
-                                                        10 base Balls
+                                                        8pm
                                                     </td>
                                                     <td>
-                                                        <Link to="/editplan"> <Button size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button></Link>
-                                                        <Button size="sm" onClick={toggle} className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
+                                                        Lane Rental
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                        {/* <img src={img1} style={{ width: "80px" }} /> */}
+                                                    </td>
+                                                    <td>
+                                                       $103
+                                                    </td>
+
+                                                    
+                                                    <td>
+                                                        {/* <Button onClick={toggle} size="sm" className="m-1" outline color="success"><i style={{ fontSize: " 14px" }} className="bx bx-edit"></i></Button> */}
+                                                        <Button onClick={toggle} size="sm" className="m-1" outline color="danger"><i style={{ fontSize: " 14px" }} className="bx bx-trash"></i></Button>
                                                     </td>
                                                 </tr>
                                             </tbody>
