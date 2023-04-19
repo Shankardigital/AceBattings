@@ -18,7 +18,7 @@ const DashedLine = () => {
   ]
   const options = {
     chart: { zoom: { enabled: !1 }, toolbar: { show: !1 } },
-    colors: ["#556ee6", "#f46a6a", "#34c38f"],
+    colors: ["#e9c686", "#f46a6a", "#34c38f"],
     dataLabels: { enabled: !1 },
     stroke: { width: [3, 4, 3], curve: "straight", dashArray: [0, 8, 5] },
     title: { text: "Page Statistics", align: "left" },

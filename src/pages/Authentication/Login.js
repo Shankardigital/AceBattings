@@ -39,8 +39,8 @@ const Login = props => {
     enableReinitialize: true,
 
     initialValues: {
-      email: "admin@digitalraiz.com" || '',
-      password: "123456" || '',
+      email: "" || '',
+      password: "" || '',
     },
     validationSchema: Yup.object({
       email: Yup.string().required("Please Enter Your Email"),
@@ -52,7 +52,7 @@ const Login = props => {
   });
 
   const { error } = useSelector(state => ({
-    error: state.Login.error,
+    error: state.Login.error.message,
   }));
 
   const signIn = (res, type) => {
@@ -105,7 +105,7 @@ const Login = props => {
                     <Col xs={7}>
                       <div className="text-primary p-4">
                         {/* <h5 className="text-primary">Welcome Back !</h5> */}
-                        <h5 className="text-primary">Sign in to continue to Ace Batting .</h5>
+                        <h5 className="text-dark">Sign in to continue to Ace Batting .</h5>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -272,13 +272,7 @@ const Login = props => {
                 </CardBody>
               </Card>
               <div className="mt-5 text-center">
-                <p>
-                  Don&#39;t have an account ?{" "}
-                  <Link to="/register" className="fw-medium text-primary">
-                    {" "}
-                    Signup now{" "}
-                  </Link>{" "}
-                </p>
+                
                 <p>
                   © {new Date().getFullYear()} Ace Batting. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Digitalraiz

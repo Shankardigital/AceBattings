@@ -9,7 +9,7 @@ const chartapex = () => {
   ]
   const options = {
     chart: { zoom: { enabled: !1 }, toolbar: { show: !1 } },
-    colors: ["#556ee6", "#34c38f"],
+    colors: ["#e9c686", "#34c38f"],
     dataLabels: { enabled: !0 },
     stroke: { width: [3, 3], curve: "straight" },
     title: { text: "Average High & Low Temperature", align: "left" },

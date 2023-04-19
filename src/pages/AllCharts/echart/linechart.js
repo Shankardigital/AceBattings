@@ -43,7 +43,7 @@ const Line = () => {
         type: "line",
       },
     ],
-    color: ["#556ee6"],
+    color: ["#e9c686"],
     textStyle: {
       color: ["#74788d"],
     },

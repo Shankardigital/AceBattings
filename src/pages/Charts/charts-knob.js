@@ -21,7 +21,7 @@ const ChartsKnob = () => {
   const [readonly, setreadonly] = useState(85)
 
   const handleChange = newValue => {
-    setvalue(newValue)
+    setvalue(newValue) 
   }
   const handleChangecursor = newValue => {
     setvalue_cur(newValue)

@@ -111,7 +111,8 @@
   padding: calc(#{$header-height} + #{$grid-gutter-width})
     calc(#{$grid-gutter-width} / 2) $footer-height
     calc(#{$grid-gutter-width} / 2);
-    background: #f5e1bc9c !important
+    // background: #f5e1bc9c !important
+    background: #fff !important
 }
 
 // html {

@@ -38,7 +38,7 @@ const Apaexlinecolumn = () => {
       colors: ["transparent"],
     },
 
-    colors: ["#34c38f", "#556ee6", "#f46a6a"],
+    colors: ["#34c38f", "#e9c686", "#f46a6a"],
     xaxis: {
       categories: [
         "Feb",

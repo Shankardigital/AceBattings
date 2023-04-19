@@ -95,7 +95,7 @@ const SidebarContent = props => {
             <li className="menu-title">{props.t("Menu")} </li>
             <li>
               <Link to="/dashboard" >
-                <i className="bx bx-home-circle"></i>
+                <i className="fas fa-home"></i>
 
                 <span>{props.t("Dashboards")}</span>
               </Link>
@@ -117,9 +117,16 @@ const SidebarContent = props => {
 
             <li>
               <Link to="/users" >
-                <i className="bx bx-user-circle"></i>
+                <i className="fas fa-user-circle"></i>
 
-                <span>{props.t("User Management")}</span>
+                <span>{props.t("Employees")}</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/customers" >
+                <i className="fa fa-users"></i>
+
+                <span>{props.t("Customers")}</span>
               </Link>
             </li>
             <li>
@@ -143,6 +150,20 @@ const SidebarContent = props => {
                 <span>{props.t("Banners")}</span>
               </Link>
             </li>
+            <li>
+              <Link to="/coupon" >
+                <i className="fas fa-ticket-alt"></i>
+
+                <span>{props.t("Coupons")}</span>
+              </Link>
+            </li>
+
+            {/* <li>
+              <Link to="/clinics" >
+                <i className="fa fa-bookmark"></i>
+                <span>{props.t("Clinics")}</span>
+              </Link>
+            </li> */}
 
             <li>
               <Link to="/#" className="has-arrow">
@@ -151,13 +172,77 @@ const SidebarContent = props => {
               </Link>
               <ul className="sub-menu">
                 <li>
-                  <Link to="/lanes">{props.t("Add Lanes")}</Link>
+                  <Link to="/lanes"><span>{props.t("Add Lanes")}</span></Link>
+                </li>
+                <li>
+                  <Link to="/repairlanes"><span>{props.t("Repair Lanes")}</span></Link>
+                </li>
+                <li>
+                  <Link to="/lane_booking">{props.t("Lane View")}</Link>
+                </li>
+                <li>
+                  <Link to="/lanes_list"><span>{props.t("Booking List")}</span></Link>
+                </li>
+               
+              </ul>
+            </li>
+
+            <li>
+              <Link to="/#" className="has-arrow">
+                <i className="fa fa-bookmark" />
+                <span>{props.t("Classes")}</span>
+              </Link>
+              <ul className="sub-menu">
+                <li>
+                  <Link to="/batch"><span>{props.t("Batch")}</span></Link>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <Link to="/#" className="has-arrow">
+                <i className="fas fa-user-shield" />
+                <span>{props.t("Roles & Permissions")}</span>
+              </Link>
+              <ul className="sub-menu">
+                <li>
+                  <Link to="/rolesandpermissions"><span>{props.t("Add Roles")}</span></Link>
                 </li>
                 {/* <li>
                   <Link to="/lane_booking">{props.t("Lane Booking")}</Link>
                 </li> */}
                 <li>
-                  <Link to="/lanes_list">{props.t("Booking List")}</Link>
+                  <Link to="/rolelist"><span>{props.t("Roles List")}</span></Link>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <Link to="/notifications" >
+                <i className="fa fa-bell"></i>
+
+                <span>{props.t("Notifications")}</span>
+              </Link>
+            </li>
+
+
+            <li>
+              <Link to="/#" className="has-arrow">
+                <i className="fa fa-cubes" />
+                <span>{props.t("Others")}</span>
+              </Link>
+              <ul className="sub-menu">
+                <li>
+                  <Link to="/aboutus"><span>{props.t("About Us")}</span></Link>
+                </li>
+                <li>
+                  <Link to="/termscondition">{props.t("Terms & Condition")}</Link>
+                </li>
+                <li>
+                  <Link to="/privacypolicy"><span>{props.t("Privacy Policy")}</span></Link>
+                </li>
+                <li>
+                  <Link to="/refunds"><span>{props.t("Refunds")}</span></Link>
                 </li>
               </ul>
             </li>

@@ -33,6 +33,8 @@ const LatestTranaction = props => {
     orders: state.ecommerce.orders,
   }));
 
+  // bookingdata = props.latest10BookingDocuments
+
   useEffect(() => {
     dispatch(onGetOrders());
   }, [dispatch]);
@@ -45,21 +47,19 @@ const LatestTranaction = props => {
 
   const columns = useMemo(
     () => [
+     
       {
-        Header: "#",
-        filterable: true,
-        disableFilters: true,
-        Cell: cellProps => {
-          return <input type="checkbox" />;
-        },
-      },
-      {
-        Header: "Order ID",
+        Header: "Booking No",
         accessor: "orderId",
         filterable: true,
         disableFilters: true,
         Cell: cellProps => {
-          return <OrderId {...cellProps} />;
+          return props.latest10BookingDocuments.map((data) =>(
+            data.bookingNo
+          ));
+          // return props.latest10BookingDocuments.map((data) =>(
+          //   data.bookingNo
+          // ));
         },
       },
       {
@@ -116,7 +116,7 @@ const LatestTranaction = props => {
               type="button"
               color="primary"
               className="btn-sm btn-rounded"
-              onClick={toggleViewModal}
+              // onClick={toggleViewModal}
             >
               View Details
             </Button>
@@ -152,6 +152,7 @@ const LatestTranaction = props => {
           <div className="mb-4 h4 card-title">Latest Transaction</div>
           <TableContainer
             columns={columns}
+
             data={orders}
             isGlobalFilter={true}
             isAddOptions={false}

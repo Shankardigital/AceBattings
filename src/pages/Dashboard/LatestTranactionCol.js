@@ -24,6 +24,8 @@ const OrderId = (cell) => {
     );
 };
 
+
+
 const BillingName = (cell) => {
     return cell.value ? cell.value : '';
 };

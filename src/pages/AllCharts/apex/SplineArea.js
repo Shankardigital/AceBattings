@@ -22,7 +22,7 @@ const Spinearea = () => {
       width: 3,
     },
 
-    colors: ["#556ee6", "#34c38f"],
+    colors: ["#e9c686", "#34c38f"],
     xaxis: {
       type: "datetime",
       categories: [

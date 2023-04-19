@@ -35,8 +35,10 @@ import ActivityComp from "./ActivityComp";
 import TopCities from "./TopCities";
 import LatestTranaction from "./LatestTranaction";
 import MiniWidget from "../Dashboard-crypto/mini-widget";
-import Earning from "../Dashboard-saas/earning"
-import SalesAnalytics from "../Dashboard-saas/sales-analytics"
+import Bookearnings from "./Bookearnings"
+import Saleschat from "./Saleschat"
+import axios from "axios";
+import { URL } from "Apiurls";
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
@@ -90,7 +92,47 @@ const Dashboard = props => {
   }, [dispatch]);
 
   //meta title
-  document.title = "Dashboard | Ace Batting - React Admin & Dashboard Template";
+
+
+  var gets = localStorage.getItem("authUser");
+  var data = JSON.parse(gets);
+  var datas = data.token;
+  const permissioins = data.user.permissions[0]
+  const roles = data.user.role
+
+  const [user, setuser] = useState([])
+  const [bookings, setbookings] = useState([])
+  const [bookamount, setbookamount] = useState('')
+  console.log(bookamount)
+  const [pieChart, setpieChart] = useState({})
+  const [graph, setgraph] = useState()
+  const [latest10BookingDocuments, setlatest10BookingDocuments] = useState([])
+
+  const dashboarddata = () => {
+    const token = datas
+    axios.post(URL.getdashboard, {}, {
+      headers: { Authorization: `Bearer ${token}` }
+    }).then((res) => {
+      console.log(res.data)
+      setuser(res.data.customerCount)
+      setbookings(res.data.bookingCount)
+      if (typeof res.data.totalBookingPayment === 'string' && !isNaN(res.data.totalBookingPayment)) {
+        const totalBookingPaymentFloat = parseFloat(res.data.totalBookingPayment);
+        setbookamount(totalBookingPaymentFloat.toFixed(2));
+      }
+      // setbookamount(res.data.parseInt(totalBookingPayment.toFixed(2)))
+      setpieChart(res.data.pieChart)
+      setgraph(res.data.graph)
+      setlatest10BookingDocuments(res.data.latest10BookingDocuments)
+
+    })
+  }
+
+
+  useEffect(() => {
+    dashboarddata()
+  }, [])
+
 
   const series1 = [
     { name: "BTC", data: [12, 14, 2, 47, 42, 15, 47, 75, 65, 19, 14] },
@@ -119,7 +161,7 @@ const Dashboard = props => {
   const options2 = {
     chart: { sparkline: { enabled: !0 } },
     stroke: { curve: "smooth", width: 2 },
-    colors: ["#3452e1"],
+    colors: ["#34c38f"],
     fill: {
       type: "gradient",
       gradient: {
@@ -154,38 +196,38 @@ const Dashboard = props => {
     tooltip: { fixed: { enabled: !1 }, x: { show: !1 }, marker: { show: !1 } },
   }
 
-
   const reports1 = [
     {
-      title: "Grounds",
+      title: "Users",
+      icon: "bx bx-user-circle",
+      color: "info",
+      value: user,
+      // desc: "+ 1.792 ( 0.1 % )",
+      series: series3,
+      options: options3,
+      // arrowUpDown: 'mdi mdi-arrow-up ms-1 text-success'
+    },
+    {
+      title: "Bookings",
       icon: "bx bx-tennis-ball",
       color: "warning",
-      value: "57,986",
+      value: bookings,
       // desc: "+ 0.0012 ( 0.2 % )",
       series: series1,
       options: options1,
       // arrowUpDown: 'mdi mdi-arrow-up ms-1 text-success'
     },
     {
-      title: "Bookings",
-      icon: "mdi mdi-ethereum",
-      color: "primary",
-      value: "2,077",
+      title: "Total Payments",
+      icon: "bx bx-dollar-circle",
+      color: "success",
+      value: bookamount,
       // desc: "- 4.102 ( 0.1 % )",
       series: series2,
       options: options2,
       // arrowUpDown: 'mdi mdi-arrow-down ms-1 text-danger'
     },
-    {
-      title: "Users",
-      icon: "bx bx-user-circle",
-      color: "info",
-      value: "225",
-      // desc: "+ 1.792 ( 0.1 % )",
-      series: series3,
-      options: options3,
-      // arrowUpDown: 'mdi mdi-arrow-up ms-1 text-success'
-    },
+
     // {
     //   title: "Bitcoin",
     //   icon: "mdi mdi-bitcoin",
@@ -198,6 +240,14 @@ const Dashboard = props => {
     // },
   ];
 
+  const [qrcode, setqrcode] = useState([])
+  console.log(qrcode)
+
+  const qrcodedata = (data) => {
+    setqrcode(data)
+    setSubscribemodal(true)
+  }
+
   return (
     <React.Fragment>
       <div className="page-content">
@@ -207,12 +257,13 @@ const Dashboard = props => {
             title={props.t("Dashboards")}
             breadcrumbItem={props.t("Dashboard")}
           />
+          {permissioins.dashview === true || roles === "admin" ? (
+            <div>
+              <Row>
+                <MiniWidget reports={reports1} />
+              </Row>
 
-          <Row>
-            <MiniWidget reports={reports1} />
-          </Row>
-
-          {/* <Row>
+              {/* <Row>
             <Col xl="4">
               <SocialSource />
             </Col>
@@ -224,18 +275,91 @@ const Dashboard = props => {
               <TopCities />
             </Col>
           </Row> */}
-<Row>
-            {/* earning */}
-            <Earning />
+              <Row>
+                {/* earning */}
+                <Bookearnings graph={graph} />
 
-            {/* sales anytics */}
-            <SalesAnalytics />
-          </Row>
-          <Row>
-            <Col lg="12">
-              <LatestTranaction />
-            </Col>
-          </Row>
+                {/* sales anytics */}
+                <Saleschat pieChart={pieChart} />
+              </Row>
+              <Row>
+                <Col lg="12">
+                  <Card>
+                    <CardBody>
+                      <h4 className="card-title mb-4">Latest Booking </h4>
+                      <div className="table-rep-plugin mt-4">
+                        <Table hover bordered responsive>
+                          <thead style={{ background: "#eff2f7" }}>
+                            <tr>
+                              <th>
+                                Sl No
+                              </th>
+                              <th>
+                                Booking No
+                              </th>
+                              <th>
+                                Plan Name
+                              </th>
+                              <th>
+                                Customer
+                              </th>
+                              <th>
+                                Date
+                              </th>
+                              <th>
+                                Amount
+                              </th>
+                              <th>
+                                QR Code
+                              </th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {latest10BookingDocuments.map((data, key) => (
+                              <tr key={key}>
+                                <th scope="row">
+                                  {key + 1}
+                                </th>
+
+                                <td>
+                                  {data.bookingNo}
+                                </td>
+                                <td>
+                                  {data.planName}
+                                </td>
+                                <td>
+                                  {data.customerName}
+                                </td>
+                                <td>
+                                  {data.date == null || data.date == undefined ? (
+                                    <span>{data.startDate.slice(0, 9)}</span>
+                                  ):(
+                                    <span>{data.date}</span>
+                                  )}
+                                </td>
+                                <td>
+                                  $ {data.totalAmount}
+                                </td>
+                                <td>
+                                  <button onClick={() => { qrcodedata(data) }} type="button" className="m-1 btn btn-outline-primary btn-sm"><i className="fa fa-qrcode" style={{ fontSize: "14px" }}></i></button>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </Table>
+                      </div>
+                    </CardBody>
+                  </Card>
+                  {/* <LatestTranaction  latest10BookingDocuments={latest10BookingDocuments} /> */}
+                </Col>
+              </Row>
+            </div>
+          ) : (
+            <Card>
+              <h5 className="text-center p-1">You don't have permission to access</h5>
+            </Card>
+          )}
         </Container>
       </div>
 
@@ -246,6 +370,7 @@ const Dashboard = props => {
         autoFocus={true}
         centered
         data-toggle="modal"
+        size="sm"
         toggle={() => {
           setSubscribemodal(!subscribemodal);
         }}
@@ -259,142 +384,12 @@ const Dashboard = props => {
           ></ModalHeader>
         </div>
         <div className="modal-body">
-          <div className="text-center mb-4">
-            <div className="avatar-md mx-auto mb-4">
-              <div className="avatar-title bg-light  rounded-circle text-primary h1">
-                <i className="mdi mdi-email-open"></i>
-              </div>
-            </div>
-
-            <div className="row justify-content-center">
-              <div className="col-xl-10">
-                <h4 className="text-primary">Subscribe !</h4>
-                <p className="text-muted font-size-14 mb-4">
-                  Subscribe our newletter and get notification to stay update.
-                </p>
-
-                <div
-                  className="input-group rounded bg-light"
-                >
-                  <Input
-                    type="email"
-                    className="form-control bg-transparent border-0"
-                    placeholder="Enter Email address"
-                  />
-                  <Button color="primary" type="button" id="button-addon2">
-                    <i className="bx bxs-paper-plane"></i>
-                  </Button>
-                </div>
-              </div>
-            </div>
+          <div className="text-center">
+            <img style={{ width: "200px" }} src={`http://103.186.185.77:5027/${qrcode.qrCode}`} />
           </div>
         </div>
       </Modal>
 
-      <Modal
-        isOpen={modal}
-        role="dialog"
-        autoFocus={true}
-        centered={true}
-        className="exampleModal"
-        tabIndex="-1"
-        toggle={() => {
-          setmodal(!modal);
-        }}
-      >
-        <div>
-          <ModalHeader
-            toggle={() => {
-              setmodal(!modal);
-            }}
-          >
-            Order Details
-          </ModalHeader>
-          <ModalBody>
-            <p className="mb-2">
-              Product id: <span className="text-primary">#SK2540</span>
-            </p>
-            <p className="mb-4">
-              Billing Name: <span className="text-primary">Neal Matthews</span>
-            </p>
-
-            <div className="table-responsive">
-              <Table className="table table-centered table-nowrap">
-                <thead>
-                  <tr>
-                    <th scope="col">Product</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      <div>
-                        <img src={modalimage1} alt="" className="avatar-sm" />
-                      </div>
-                    </th>
-                    <td>
-                      <div>
-                        <h5 className="text-truncate font-size-14">
-                          Wireless Headphone (Black)
-                        </h5>
-                        <p className="text-muted mb-0">$ 225 x 1</p>
-                      </div>
-                    </td>
-                    <td>$ 255</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div>
-                        <img src={modalimage2} alt="" className="avatar-sm" />
-                      </div>
-                    </th>
-                    <td>
-                      <div>
-                        <h5 className="text-truncate font-size-14">
-                          Hoodie (Blue)
-                        </h5>
-                        <p className="text-muted mb-0">$ 145 x 1</p>
-                      </div>
-                    </td>
-                    <td>$ 145</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2">
-                      <h6 className="m-0 text-end">Sub Total:</h6>
-                    </td>
-                    <td>$ 400</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2">
-                      <h6 className="m-0 text-end">Shipping:</h6>
-                    </td>
-                    <td>Free</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2">
-                      <h6 className="m-0 text-end">Total:</h6>
-                    </td>
-                    <td>$ 400</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              type="button"
-              color="secondary"
-              onClick={() => {
-                setmodal(!modal);
-              }}
-            >
-              Close
-            </Button>
-          </ModalFooter>
-        </div>
-      </Modal>
     </React.Fragment>
   );
 };

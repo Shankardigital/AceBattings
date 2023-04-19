@@ -394,7 +394,9 @@
 
 body[data-sidebar="dark"] {
   .vertical-menu {
-    background: #f5e1bc9c;
+    // background: #f5e1bc9c;
+    background: #fcf9f2;
+    box-shadow: rgb(245 228 196) 0px 6px 12px -2px; 
   }
 
   #sidebar-menu {
@@ -426,6 +428,7 @@ body[data-sidebar="dark"] {
 
             }
           }
+
         }
 
         ul.sub-menu {
@@ -441,6 +444,14 @@ body[data-sidebar="dark"] {
         }
       }
     }
+  }
+
+  a.active {
+    background: #e9c686;
+    color: #fff;
+  }
+  a.active span {
+    color: #fff;
   }
 
   // Enlarge menu
@@ -459,7 +470,7 @@ body[data-sidebar="dark"] {
           >li {
             &:hover {
               >a {
-                background: lighten($sidebar-dark-bg, 2%);
+                background: #e5cb99;
                 color: $sidebar-dark-menu-item-hover-color;
 
                 i {
@@ -480,7 +491,7 @@ body[data-sidebar="dark"] {
           }
 
           ul {
-            background-color: $sidebar-dark-bg;
+            background-color: #efdab2;
           }
         }
 
@@ -490,7 +501,7 @@ body[data-sidebar="dark"] {
               color: $sidebar-dark-menu-item-active-color !important;
 
               i {
-                color: $sidebar-dark-menu-item-active-color !important;
+                color: #000000 !important;
               }
             }
           }
@@ -506,6 +517,9 @@ body[data-sidebar="dark"] {
       color: #000000 !important;
 
       i {
+        color: #000000 !important;
+      }
+      span {
         color: #000000 !important;
       }
     }
@@ -801,14 +815,14 @@ body[data-sidebar="colored"] {
 
 body[data-sidebar="winter"] {
   .vertical-menu {
-    background-image: linear-gradient(to right, #556ee6, #34c38f);
+    background-image: linear-gradient(to right, #e9c686, #34c38f);
     background-repeat: repeat-x;
   }
 
   &.vertical-collpsed {
     .vertical-menu {
       .navbar-brand-box {
-        background-image: linear-gradient(to right, #556ee6, #34c38f);
+        background-image: linear-gradient(to right, #e9c686, #34c38f);
         background-repeat: repeat-x;
       }
 
@@ -816,7 +830,7 @@ body[data-sidebar="winter"] {
         >ul {
           >li {
             &:hover>a {
-              background-image: linear-gradient(to right, #556ee6, #34c38f);
+              background-image: linear-gradient(to right, #e9c686, #34c38f);
               background-repeat: repeat-x;
             }
           }
@@ -827,7 +841,7 @@ body[data-sidebar="winter"] {
 
   &[data-sidebar-size="small"] {
     .menu-title {
-      background-image: linear-gradient(to right, #556ee6, #34c38f);
+      background-image: linear-gradient(to right, #e9c686, #34c38f);
     }
   }
 }
@@ -836,14 +850,14 @@ body[data-sidebar="winter"] {
 
 body[data-sidebar="ladylip"] {
   .vertical-menu {
-    background-image: linear-gradient(to right, #556ee6, #f46a6a);
+    background-image: linear-gradient(to right, #e9c686, #f46a6a);
     background-repeat: repeat-x;
   }
 
   &.vertical-collpsed {
     .vertical-menu {
       .navbar-brand-box {
-        background-image: linear-gradient(to right, #556ee6, #f46a6a);
+        background-image: linear-gradient(to right, #e9c686, #f46a6a);
         background-repeat: repeat-x;
       }
 
@@ -851,7 +865,7 @@ body[data-sidebar="ladylip"] {
         >ul {
           >li {
             &:hover>a {
-              background-image: linear-gradient(to right, #556ee6, #f46a6a);
+              background-image: linear-gradient(to right, #e9c686, #f46a6a);
               background-repeat: repeat-x;
             }
           }
@@ -862,7 +876,7 @@ body[data-sidebar="ladylip"] {
 
   &[data-sidebar-size="small"] {
     .menu-title {
-      background-image: linear-gradient(to right, #556ee6, #f46a6a);
+      background-image: linear-gradient(to right, #e9c686, #f46a6a);
     }
   }
 }
@@ -871,14 +885,14 @@ body[data-sidebar="ladylip"] {
 
 body[data-sidebar="plumplate"] {
   .vertical-menu {
-    background-image: linear-gradient(to right, #556ee6, #f1b44c);
+    background-image: linear-gradient(to right, #e9c686, #f1b44c);
     background-repeat: repeat-x;
   }
 
   &.vertical-collpsed {
     .vertical-menu {
       .navbar-brand-box {
-        background-image: linear-gradient(to right, #556ee6, #f1b44c);
+        background-image: linear-gradient(to right, #e9c686, #f1b44c);
         background-repeat: repeat-x;
       }
 
@@ -886,7 +900,7 @@ body[data-sidebar="plumplate"] {
         >ul {
           >li {
             &:hover>a {
-              background-image: linear-gradient(to right, #556ee6, #f1b44c);
+              background-image: linear-gradient(to right, #e9c686, #f1b44c);
               background-repeat: repeat-x;
             }
           }
@@ -897,7 +911,7 @@ body[data-sidebar="plumplate"] {
 
   &[data-sidebar-size="small"] {
     .menu-title {
-      background-image: linear-gradient(to right, #556ee6, #f1b44c);
+      background-image: linear-gradient(to right, #e9c686, #f1b44c);
     }
   }
 }
@@ -970,7 +984,7 @@ body[data-sidebar="greatwhale"] {
 
   &[data-sidebar-size="small"] {
     .menu-title {
-      background-image: linear-gradient(to right, #556ee6, #50a5f1);
+      background-image: linear-gradient(to right, #e9c686, #50a5f1);
     }
   }
 }
@@ -1064,17 +1078,17 @@ body[data-sidebar-image="img4"] {
 }
 
 .gradient-winter {
-  background-image: linear-gradient(to right, #556ee6, #34c38f);
+  background-image: linear-gradient(to right, #e9c686, #34c38f);
   background-repeat: repeat-x;
 }
 
 .gradient-lady-lip {
-  background-image: linear-gradient(to right, #556ee6, #f46a6a);
+  background-image: linear-gradient(to right, #e9c686, #f46a6a);
   background-repeat: repeat-x;
 }
 
 .gradient-plum-plate {
-  background-image: linear-gradient(to right, #556ee6, #f1b44c);
+  background-image: linear-gradient(to right, #e9c686, #f1b44c);
 }
 
 .gradient-strong-bliss {

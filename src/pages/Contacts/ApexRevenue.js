@@ -55,7 +55,7 @@ const ApexRevenue = () => {
     fill: {
       opacity: 1,
     },
-    colors: ["#556ee6"],
+    colors: ["#e9c686"],
   }
   const series = [
     {

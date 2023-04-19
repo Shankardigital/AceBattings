@@ -5,18 +5,18 @@ import { Redirect } from "react-router-dom";
 import Chat from "../pages/Chat/Chat";
 
 // File Manager
-import FileManager from "../pages/FileManager/index";
+// import FileManager from "../pages/FileManager/index";
 
 // Profile
 import UserProfile from "../pages/Authentication/user-profile";
 
 // Pages Calendar
-import Calendar from "../pages/Calendar/index";
+// import Calendar from "../pages/Calendar/index";
 
 // //Tasks
-import TasksList from "../pages/Tasks/tasks-list";
-import TasksKanban from "../pages/Tasks/tasks-kanban";
-import TasksCreate from "../pages/Tasks/tasks-create";
+// import TasksList from "../pages/Tasks/tasks-list";
+// import TasksKanban from "../pages/Tasks/tasks-kanban";
+// import TasksCreate from "../pages/Tasks/tasks-create";
 
 // //Projects
 import ProjectsGrid from "../pages/Projects/projects-grid";
@@ -34,22 +34,25 @@ import EcommerceCheckout from "../pages/Ecommerce/EcommerceCheckout";
 import EcommerceShops from "../pages/Ecommerce/EcommerceShops/index";
 import EcommerceAddProduct from "../pages/Ecommerce/EcommerceAddProduct";
 
-//Email
-import EmailInbox from "../pages/Email/email-inbox";
-import EmailRead from "../pages/Email/email-read";
-import EmailBasicTemplte from "../pages/Email/email-basic-templte";
-import EmailAlertTemplte from "../pages/Email/email-template-alert";
-import EmailTemplateBilling from "../pages/Email/email-template-billing";
+// //Email
+// import EmailInbox from "../pages/Email/email-inbox";
+// import EmailRead from "../pages/Email/email-read";
+// import EmailBasicTemplte from "../pages/Email/email-basic-templte";
+// import EmailAlertTemplte from "../pages/Email/email-template-alert";
+// import EmailTemplateBilling from "../pages/Email/email-template-billing";
 
 //Invoices
-import InvoicesList from "../pages/Invoices/invoices-list";
-import InvoiceDetail from "../pages/Invoices/invoices-detail";
+// import InvoicesList from "../pages/Invoices/invoices-list";
+// import InvoiceDetail from "../pages/Invoices/invoices-detail";
 
 // Authentication related pages
 import Login from "../pages/Authentication/Login";
 import Logout from "../pages/Authentication/Logout";
 import Register from "../pages/Authentication/Register";
 import ForgetPwd from "../pages/Authentication/ForgetPassword";
+import Compareotp from "../pages/Authentication/Compareotp";
+import Resetpsw from "../pages/Authentication/Resetpsw";
+import Setpwd from "../pages/Authentication/Setpwd";
 
 //  // Inner Authentication
 import Login1 from "../pages/AuthenticationInner/Login";
@@ -68,6 +71,8 @@ import EmailVerification from "../pages/AuthenticationInner/auth-email-verificat
 import EmailVerification2 from "../pages/AuthenticationInner/auth-email-verification-2";
 import TwostepVerification from "../pages/AuthenticationInner/auth-two-step-verification";
 import TwostepVerification2 from "../pages/AuthenticationInner/auth-two-step-verification-2";
+
+
 
 // Dashboard
 import Dashboard from "../pages/Dashboard/index";
@@ -99,17 +104,17 @@ import MapsVector from "../pages/Maps/MapsVector";
 import MapsLeaflet from "../pages/Maps/MapsLeaflet";
 
 //Icons
-import IconBoxicons from "../pages/Icons/IconBoxicons";
-import IconDripicons from "../pages/Icons/IconDripicons";
-import IconMaterialdesign from "../pages/Icons/IconMaterialdesign";
-import IconFontawesome from "../pages/Icons/IconFontawesome";
+// import IconBoxicons from "../pages/Icons/IconBoxicons";
+// import IconDripicons from "../pages/Icons/IconDripicons";
+// import IconMaterialdesign from "../pages/Icons/IconMaterialdesign";
+// import IconFontawesome from "../pages/Icons/IconFontawesome";
 
 //Tables
-import BasicTables from "../pages/Tables/BasicTables";
-import DatatableTables from "../pages/Tables/DatatableTables";
-import ResponsiveTables from "../pages/Tables/ResponsiveTables";
-import EditableTables from "../pages/Tables/EditableTables";
-import DragDropTables from '../pages/Tables/DragDropTables';
+// import BasicTables from "../pages/Tables/BasicTables";
+// import DatatableTables from "../pages/Tables/DatatableTables";
+// import ResponsiveTables from "../pages/Tables/ResponsiveTables";
+// import EditableTables from "../pages/Tables/EditableTables";
+// import DragDropTables from '../pages/Tables/DragDropTables';
 
 //Blog
 import BlogList from "../pages/Blog/BlogList/index";
@@ -117,17 +122,17 @@ import BlogGrid from "../pages/Blog/BlogGrid/index";
 import BlogDetails from "../pages/Blog/BlogDetails";
 
 // Forms
-import FormElements from "../pages/Forms/FormElements";
-import FormLayouts from "../pages/Forms/FormLayouts";
-import FormAdvanced from "../pages/Forms/FormAdvanced";
-import FormEditors from "../pages/Forms/FormEditors";
-import FormValidations from "../pages/Forms/FormValidations";
-import FormMask from "../pages/Forms/FormMask";
-import FormRepeater from "../pages/Forms/FormRepeater";
-import FormUpload from "../pages/Forms/FormUpload";
-import FormWizard from "../pages/Forms/FormWizard";
-import FormXeditable from "../pages/Forms/FormXeditable";
-import DualListbox from "../pages/Tables/DualListbox";
+// import FormElements from "../pages/Forms/FormElements";
+// import FormLayouts from "../pages/Forms/FormLayouts";
+// import FormAdvanced from "../pages/Forms/FormAdvanced";
+// import FormEditors from "../pages/Forms/FormEditors";
+// import FormValidations from "../pages/Forms/FormValidations";
+// import FormMask from "../pages/Forms/FormMask";
+// import FormRepeater from "../pages/Forms/FormRepeater";
+// import FormUpload from "../pages/Forms/FormUpload";
+// import FormWizard from "../pages/Forms/FormWizard";
+// import FormXeditable from "../pages/Forms/FormXeditable";
+// import DualListbox from "../pages/Tables/DualListbox";
 
 //Ui
 import UiAlert from "../pages/Ui/UiAlert";
@@ -154,15 +159,16 @@ import UiBreadcrumb from '../pages/Ui/UiBreadcrumb';
 import UiPlaceholders from "../pages/Ui/UiPlaceholders";
 import UiToasts from "../pages/Ui/UiToast";
 
+
 //Pages
-import PagesStarter from "../pages/Utility/pages-starter";
-import PagesMaintenance from "../pages/Utility/pages-maintenance";
-import PagesComingsoon from "../pages/Utility/pages-comingsoon";
-import PagesTimeline from "../pages/Utility/pages-timeline";
-import PagesFaqs from "../pages/Utility/pages-faqs";
-import PagesPricing from "../pages/Utility/pages-pricing";
-import Pages404 from "../pages/Utility/pages-404";
-import Pages500 from "../pages/Utility/pages-500";
+// import PagesStarter from "../pages/Utility/pages-starter";
+// import PagesMaintenance from "../pages/Utility/pages-maintenance";
+// import PagesComingsoon from "../pages/Utility/pages-comingsoon";
+// import PagesTimeline from "../pages/Utility/pages-timeline";
+// import PagesFaqs from "../pages/Utility/pages-faqs";
+// import PagesPricing from "../pages/Utility/pages-pricing";
+// import Pages404 from "../pages/Utility/pages-404";
+// import Pages500 from "../pages/Utility/pages-500";
 
 //Contacts
 import ContactsGrid from "../pages/Contacts/contacts-grid";
@@ -171,16 +177,29 @@ import ContactsProfile from "../pages/Contacts/ContactsProfile/contacts-profile"
 
 // Ace Folders
 import Users from "../pages/Acefolders/Users";
+import Customers from "../pages/Acefolders/Customers";
 import Plans from "../pages/Acefolders/Plans";
 import Newplans from "../pages/Acefolders/Newplans";
 import Editplan from "../pages/Acefolders/Editplan";
 import Subscribe from "../pages/Acefolders/Subscribe";
 import Banners from "../pages/Acefolders/Banners";
+import Coupon from "../pages/Acefolders/Coupon";
 import Booking from "../pages/Acefolders/Booking";
+import RolesandPermissions from "../pages/Acefolders/RolesandPermissions";
+import Rolelist from "../pages/Acefolders/Rolelist";
+import Editrole from "../pages/Acefolders/Editrole";
 
 import Planes from "../pages/Booking/Planes";
 import Lanebooking from "../pages/Booking/Lanebooking";
 import Laneslist from "../pages/Booking/Laneslist";
+import Clinics from "../pages/Booking/Clinics";
+import RepairLine from "../pages/Booking/RepairLine";
+import Batch from "../pages/Acefolders/Batch";
+import Notifications from "../pages/Acefolders/Notifications";
+import About from "../pages/others/About";
+import Privacypolicy from "../pages/others/Privacypolicy";
+import Termsandconditions from "../pages/others/Termsandconditions";
+import Refunds from "../pages/others/Refunds";
 
 
 const authProtectedRoutes = [
@@ -201,10 +220,10 @@ const authProtectedRoutes = [
   { path: "/chat", component: Chat },
 
   //File Manager
-  { path: "/apps-filemanager", component: FileManager },
+  // { path: "/apps-filemanager", component: FileManager },
 
   // //calendar
-  { path: "/calendar", component: Calendar },
+  // { path: "/calendar", component: Calendar },
 
   // //profile
   { path: "/profile", component: UserProfile },
@@ -220,20 +239,20 @@ const authProtectedRoutes = [
   { path: "/ecommerce-add-product", component: EcommerceAddProduct },
 
   //Email
-  { path: "/email-inbox", component: EmailInbox },
-  { path: "/email-read", component: EmailRead },
-  { path: "/email-template-basic", component: EmailBasicTemplte },
-  { path: "/email-template-alert", component: EmailAlertTemplte },
-  { path: "/email-template-billing", component: EmailTemplateBilling },
+  // { path: "/email-inbox", component: EmailInbox },
+  // { path: "/email-read", component: EmailRead },
+  // { path: "/email-template-basic", component: EmailBasicTemplte },
+  // { path: "/email-template-alert", component: EmailAlertTemplte },
+  // { path: "/email-template-billing", component: EmailTemplateBilling },
 
   //Invoices
-  { path: "/invoices-list", component: InvoicesList },
-  { path: "/invoices-detail/:id?", component: InvoiceDetail },
+  // { path: "/invoices-list", component: InvoicesList },
+  // { path: "/invoices-detail/:id?", component: InvoiceDetail },
 
   // Tasks
-  { path: "/tasks-list", component: TasksList },
-  { path: "/tasks-kanban", component: TasksKanban },
-  { path: "/tasks-create", component: TasksCreate },
+  // { path: "/tasks-list", component: TasksList },
+  // { path: "/tasks-kanban", component: TasksKanban },
+  // { path: "/tasks-create", component: TasksCreate },
 
   //Projects
   { path: "/projects-grid", component: ProjectsGrid },
@@ -255,17 +274,32 @@ const authProtectedRoutes = [
 
   // Ace Folders
   { path: "/users", component: Users },
+  { path: "/customers", component: Customers },
   { path: "/plans", component: Plans },
   { path: "/newplans", component: Newplans },
   { path: "/editplan", component: Editplan },
   { path: "/subscribe", component: Subscribe },
   { path: "/banners", component: Banners },
+  { path: "/coupon", component: Coupon },
   { path: "/sellaplan", component: Booking },
+  { path: "/rolesandpermissions", component: RolesandPermissions },
+  { path: "/rolelist", component: Rolelist },
+  { path: "/editrole", component: Editrole },
 
 
   { path: "/lanes", component: Planes },
   { path: "/lane_booking", component: Lanebooking },
   { path: "/lanes_list", component: Laneslist },
+  { path: "/clinics", component: Clinics },
+  { path: "/repairlanes", component: RepairLine },
+
+  { path: "/batch", component: Batch },
+  { path: "/notifications", component: Notifications },
+
+  { path: "/aboutus", component: About },
+  { path: "/privacypolicy", component: Privacypolicy },
+  { path: "/termscondition", component: Termsandconditions  },
+  { path: "/refunds", component: Refunds  },
 
 
 
@@ -281,17 +315,17 @@ const authProtectedRoutes = [
   { path: "/re-charts", component: ReCharts },
 
   // Icons
-  { path: "/icons-boxicons", component: IconBoxicons },
-  { path: "/icons-dripicons", component: IconDripicons },
-  { path: "/icons-materialdesign", component: IconMaterialdesign },
-  { path: "/icons-fontawesome", component: IconFontawesome },
+  // { path: "/icons-boxicons", component: IconBoxicons },
+  // { path: "/icons-dripicons", component: IconDripicons },
+  // { path: "/icons-materialdesign", component: IconMaterialdesign },
+  // { path: "/icons-fontawesome", component: IconFontawesome },
 
   // Tables
-  { path: "/tables-basic", component: BasicTables },
-  { path: "/tables-datatable", component: DatatableTables },
-  { path: "/tables-responsive", component: ResponsiveTables },
-  { path: "/tables-editable", component: EditableTables },
-  { path: "/tables-dragndrop", component: DragDropTables },
+  // { path: "/tables-basic", component: BasicTables },
+  // { path: "/tables-datatable", component: DatatableTables },
+  // { path: "/tables-responsive", component: ResponsiveTables },
+  // { path: "/tables-editable", component: EditableTables },
+  // { path: "/tables-dragndrop", component: DragDropTables },
 
   // Maps
   { path: "/maps-google", component: MapsGoogle },
@@ -299,17 +333,17 @@ const authProtectedRoutes = [
   { path: "/maps-leaflet", component: MapsLeaflet },
 
   // Forms
-  { path: "/form-elements", component: FormElements },
-  { path: "/form-layouts", component: FormLayouts },
-  { path: "/form-advanced", component: FormAdvanced },
-  { path: "/form-editors", component: FormEditors },
-  { path: "/form-mask", component: FormMask },
-  { path: "/form-repeater", component: FormRepeater },
-  { path: "/form-uploads", component: FormUpload },
-  { path: "/form-wizard", component: FormWizard },
-  { path: "/form-validation", component: FormValidations },
-  { path: "/form-xeditable", component: FormXeditable },
-  { path: "/dual-listbox", component: DualListbox },
+  // { path: "/form-elements", component: FormElements },
+  // { path: "/form-layouts", component: FormLayouts },
+  // { path: "/form-advanced", component: FormAdvanced },
+  // { path: "/form-editors", component: FormEditors },
+  // { path: "/form-mask", component: FormMask },
+  // { path: "/form-repeater", component: FormRepeater },
+  // { path: "/form-uploads", component: FormUpload },
+  // { path: "/form-wizard", component: FormWizard },
+  // { path: "/form-validation", component: FormValidations },
+  // { path: "/form-xeditable", component: FormXeditable },
+  // { path: "/dual-listbox", component: DualListbox },
 
   // Ui
   { path: "/ui-alerts", component: UiAlert },
@@ -337,14 +371,15 @@ const authProtectedRoutes = [
   { path: "/ui-toasts", component: UiToasts },
 
   //Utility
-  { path: "/pages-starter", component: PagesStarter },
-  { path: "/pages-timeline", component: PagesTimeline },
-  { path: "/pages-faqs", component: PagesFaqs },
-  { path: "/pages-pricing", component: PagesPricing },
+  // { path: "/pages-starter", component: PagesStarter },
+  // { path: "/pages-timeline", component: PagesTimeline },
+  // { path: "/pages-faqs", component: PagesFaqs },
+  // { path: "/pages-pricing", component: PagesPricing },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
-  { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },
+
+  { path: "/", exact: true, component: () => <Redirect to="/login" /> },
 ];
 
 const publicRoutes = [
@@ -352,11 +387,14 @@ const publicRoutes = [
   { path: "/login", component: Login },
   { path: "/forgot-password", component: ForgetPwd },
   { path: "/register", component: Register },
+  { path: "/compare-otp", component: Compareotp },
+  { path: "/reset-psw", component: Resetpsw },
+  { path: "/set-psw/:id", component: Setpwd },
 
-  { path: "/pages-maintenance", component: PagesMaintenance },
-  { path: "/pages-comingsoon", component: PagesComingsoon },
-  { path: "/pages-404", component: Pages404 },
-  { path: "/pages-500", component: Pages500 },
+  // { path: "/pages-maintenance", component: PagesMaintenance },
+  // { path: "/pages-comingsoon", component: PagesComingsoon },
+  // { path: "/pages-404", component: Pages404 },
+  // { path: "/pages-500", component: Pages500 },
   { path: "/crypto-ico-landing", component: CryptoIcoLanding },
 
   // Authentication Inner
@@ -376,6 +414,7 @@ const publicRoutes = [
   { path: "/auth-email-verification-2", component: EmailVerification2 },
   { path: "/auth-two-step-verification", component: TwostepVerification },
   { path: "/auth-two-step-verification-2", component: TwostepVerification2 },
+
 ];
 
 export { authProtectedRoutes, publicRoutes };

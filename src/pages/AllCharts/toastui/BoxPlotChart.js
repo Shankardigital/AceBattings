@@ -41,7 +41,7 @@ const theme = {
     }
   },
   series: {
-    colors: ["#556ee6", "#34c38f"]
+    colors: ["#e9c686", "#34c38f"]
   }
 }
 TuiChart.registerTheme("Ace BattingTheme", theme)

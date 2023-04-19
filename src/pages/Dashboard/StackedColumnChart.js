@@ -43,7 +43,7 @@ const StackedColumnChart = ({ periodData }) => {
         show: true
       }
     },
-    colors: ["#556ee6", "#f1b44c", "#34c38f"],
+    colors: ["#e9c686", "#f1b44c", "#34c38f"],
     legend: {
       position: "bottom"
     },

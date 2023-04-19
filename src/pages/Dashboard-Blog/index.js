@@ -33,7 +33,7 @@ const index = props => {
         show: false,
       },
     },
-    colors: ["#556ee6", "#f1b44c"],
+    colors: ["#e9c686", "#f1b44c"],
     dataLabels: {
       enabled: false,
     },

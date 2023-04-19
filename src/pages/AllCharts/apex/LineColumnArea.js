@@ -35,7 +35,7 @@ const LineColumnArea = () => {
         columnWidth: "50%",
       },
     },
-    colors: ["#f46a6a", "#556ee6", "#34c38f"],
+    colors: ["#f46a6a", "#e9c686", "#34c38f"],
 
     fill: {
       opacity: [0.85, 0.25, 1],

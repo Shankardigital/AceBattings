@@ -4,8 +4,10 @@
 
 .card {
   margin-bottom: $grid-gutter-width;
-  box-shadow: $box-shadow;
-  background-color: #ffffffba !important;
+  // box-shadow: $box-shadow;
+  box-shadow: 0 0.75rem 1.5rem rgb(241 221 185 / 61%);
+  background-color: #ffffff !important;
+  border-radius: 7px;
   
 }
 

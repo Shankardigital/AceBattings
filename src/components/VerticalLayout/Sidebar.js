@@ -20,8 +20,8 @@ const Sidebar = props => {
   return (
     <React.Fragment>
       <div className="vertical-menu">
-        <div className="navbar-brand-box ">
-          <Link to="/" className="logo logo-dark">
+        <div className="navbar-brand-box ">   
+          <Link to="/dashboard" className="logo logo-dark">
             <span className="logo-sm">
               <img src={acelogo} alt="" height="22" />
               {/* <h5>Ace Batting</h5> */}
@@ -32,14 +32,14 @@ const Sidebar = props => {
             </span>
           </Link>
 
-          <Link to="/" className="logo logo-light">
+          <Link to="/dashboard" className="logo logo-light">
             <span className="logo-sm">
             {/* <h3 className="text-white mt-4">Ace</h3> */}
               <img src={acelogo} alt="" height="22" />
             </span>
             <span className="logo-lg">
             {/* <h3 className="text-white mt-4">Ace Batting</h3> */}
-              <img src={acelogo} alt="" style={{ width: "45px"}} /> <a style={{fontSize:"22px"}} className="text-dark mt-5">Ace Batting</a>
+              <img src={acelogo} alt="" style={{ width: "45px",marginBottom: "13px"}} /> <a style={{fontSize:"20px", fontFamily: 'Freshman'}} className="text-dark mt-5 pt-1" >ACE BATTING</a>
             </span>
           </Link>
         </div>

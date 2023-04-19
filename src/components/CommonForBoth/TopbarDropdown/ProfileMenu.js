@@ -7,6 +7,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 
+
 //i18n
 import { withTranslation } from "react-i18next";
 // Redux
@@ -22,20 +23,23 @@ const ProfileMenu = props => {
 
   const [username, setusername] = useState("Admin");
 
+  var gets = localStorage.getItem("authUser");
+  var data = JSON.parse(gets);
+  var datas = data.token;
+  const permissioins = data.user.permissions[0]
+  const roles = data.user.role
+  console.log(permissioins)
+
+  if (datas === null) {
+    window.location.assign("/login")
+  } else {
+    console.log("testing")
+  }
+
   useEffect(() => {
-    if (localStorage.getItem("authUser")) {
-      if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
-        const obj = JSON.parse(localStorage.getItem("authUser"));
-        setusername(obj.displayName);
-      } else if (
-        process.env.REACT_APP_DEFAULTAUTH === "fake" ||
-        process.env.REACT_APP_DEFAULTAUTH === "jwt"
-      ) {
-        const obj = JSON.parse(localStorage.getItem("authUser"));
-        setusername(obj.username);
-      }
-    }
-  }, [props.success]);
+
+
+  }, );
 
   return (
     <React.Fragment>
@@ -54,15 +58,21 @@ const ProfileMenu = props => {
             src={user1}
             alt="Header Avatar"
           />
-          <span className="d-none d-xl-inline-block ms-2 me-1">{username}</span>
+          <span className="d-none d-xl-inline-block ms-2 me-1">{roles}</span>
           <i className="mdi mdi-chevron-down d-none d-xl-inline-block" />
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
-          <DropdownItem tag="a" href="/profile">
+
+        <Link to="/profile" className="dropdown-item">
+        <i className="bx bx-user font-size-16 align-middle me-1" />
+            {props.t("Profile")}{" "}
+          </Link>
+
+          {/* <DropdownItem tag="a" href="/profile">
             {" "}
             <i className="bx bx-user font-size-16 align-middle me-1" />
             {props.t("Profile")}{" "}
-          </DropdownItem>
+          </DropdownItem> */}
           {/* <DropdownItem tag="a" href="/crypto-wallet">
             <i className="bx bx-wallet font-size-16 align-middle me-1" />
             {props.t("My Wallet")}

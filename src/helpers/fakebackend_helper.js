@@ -46,10 +46,10 @@ const postFakeRegister = data => {
 };
 
 // Login Method
-const postFakeLogin = data => post(url.POST_FAKE_LOGIN, data);
+const postFakeLogin = data => post("http://103.186.185.77:5027/acebatting/adminportal/admin/login", data);  // Login api 
 
 // postForgetPwd
-const postFakeForgetPwd = data => post(url.POST_FAKE_PASSWORD_FORGET, data);
+const postFakeForgetPwd = data => post("http://103.186.185.77:5027/acebatting/adminportal/admin/forgotpassword", data);
 
 // Edit profile
 const postJwtProfile = data => post(url.POST_EDIT_JWT_PROFILE, data);

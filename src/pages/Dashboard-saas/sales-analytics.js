@@ -3,10 +3,10 @@ import { Row, Col, Card, CardBody } from "reactstrap";
 import ReactApexChart from "react-apexcharts";
 
 const SalesAnalytics = props => {
-  const series = [56, 38, 26];
+  const series = [56, 38, 26, 20, 15, 13, 50];
   const options = {
-    labels: ["Series A", "Series B", "Series C"],
-    colors: ["#556ee6", "#34c38f", "#f46a6a"],
+    labels: ["Pay as You Go", "Team Subcription", "Membership", "Rental Line", "Rental Equipment", "Classes", "Clinics" ],
+    colors: ["#e9c686", "#34c38f", "#f46a6a", "#f1f3f4", "#b9e2f7", "#f7e0db", "#785f50"],
     legend: { show: !1 },
     plotOptions: {
       pie: {
@@ -19,7 +19,7 @@ const SalesAnalytics = props => {
 
   return (
     <React.Fragment>
-      <Col xl="4">
+      <Col xl="6">
         <Card>
           <CardBody>
             <h4 className="card-title mb-4">Booking Analytics</h4>
@@ -38,31 +38,66 @@ const SalesAnalytics = props => {
 
             <div className="text-center text-muted">
               <Row>
-                <Col xs="4">
+                <Col >
                   <div className="mt-4">
                     <p className="mb-2 text-truncate">
-                      <i className="mdi mdi-circle text-primary me-1" /> Product
-                      A
+                      <i className="mdi mdi-circle text-primary me-1" /> Pay as You Go
                     </p>
-                    <h5>$ 2,132</h5>
+                    <b>$ 2,132</b>
                   </div>
                 </Col>
-                <Col xs="4">
+                <Col  >
                   <div className="mt-4">
                     <p className="mb-2 text-truncate">
-                      <i className="mdi mdi-circle text-success me-1" /> Product
-                      B
+                      <i className="mdi mdi-circle text-success me-1" /> Team Subcription
+       
                     </p>
-                    <h5>$ 1,763</h5>
+                    <b>$ 1,763</b>
                   </div>
                 </Col>
-                <Col xs="4">
+                <Col  >
                   <div className="mt-4">
                     <p className="mb-2 text-truncate">
-                      <i className="mdi mdi-circle text-danger me-1" /> Product
-                      C
+                      <i className="mdi mdi-circle text-danger me-1" /> Membership
+                 
                     </p>
-                    <h5>$ 973</h5>
+                    <b>$ 973</b>
+                  </div>
+                </Col>
+                <Col  >
+                  <div className="mt-4">
+                    <p className="mb-2 text-truncate">
+                      <i className="mdi mdi-circle text-danger me-1" /> Rental Line
+                  
+                    </p>
+                    <b>$ 973</b>
+                  </div>
+                </Col>
+                <Col  >
+                  <div className="mt-4">
+                    <p className="mb-2 text-truncate">
+                      <i className="mdi mdi-circle text-danger me-1" /> Rental Equipment
+                  
+                    </p>
+                    <b>$ 973</b>
+                  </div>
+                </Col>
+                <Col  >
+                  <div className="mt-4">
+                    <p className="mb-2 text-truncate">
+                      <i className="mdi mdi-circle text-danger me-1" /> Classes
+                
+                    </p>
+                    <b>$ 973</b>
+                  </div>
+                </Col>
+                <Col  >
+                  <div className="mt-4">
+                    <p className="mb-2 text-truncate">
+                      <i className="mdi mdi-circle text-danger me-1" /> Clinics
+             
+                    </p>
+                    <b>$ 973</b>
                   </div>
                 </Col>
               </Row>

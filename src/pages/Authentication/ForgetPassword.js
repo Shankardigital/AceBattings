@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Alert, Card, CardBody, Container, FormFeedback, Input, Label, Form } from "reactstrap";
 
 //redux
@@ -17,11 +17,15 @@ import { userForgetPassword } from "../../store/actions";
 // import images
 import profile from "../../assets/images/profile-img.png";
 import logo from "assets/images/letast/acelogo.png"
+import { URL } from "../../Apiurls";
+import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
+import { useHistory } from "react-router-dom";
 
 const ForgetPasswordPage = props => {
 
   //meta title
-  document.title="Forget Password | Ace Batting - React Admin & Dashboard Template";
+  document.title = "Forget Password | Ace Batting - React Admin & Dashboard Template";
 
   const dispatch = useDispatch();
 
@@ -44,6 +48,41 @@ const ForgetPasswordPage = props => {
     forgetError: state.ForgetPassword.forgetError,
     forgetSuccessMsg: state.ForgetPassword.forgetSuccessMsg,
   }));
+
+  const [form, setform] = useState([])
+  let history = useHistory();
+
+  const handleChange = (e) => {
+    let myUser = { ...form };
+    myUser[e.target.name] = e.target.value;
+    setform(myUser);
+  };
+
+  const forgot = () => {
+    const emailid = {
+      email: form.email,
+    }
+    axios.post(URL.forGotpsw, emailid).then((res) => {
+      if (res.status === 200) {
+        toast.success(res.data.message);
+        console.log(res.data)
+        sessionStorage.setItem("eamilid", res.data.email)
+        setform("")
+        history.push("/compare-otp")
+      }
+    },
+      (error) => {
+        if (error.response && error.response.status === 400) {
+          toast.error(error.response.data.message);
+        }
+      }
+    )
+  }
+
+  const formsubmit = (e) => {
+    e.preventDefault()
+    forgot()
+  }
 
   return (
     <React.Fragment>
@@ -76,11 +115,11 @@ const ForgetPasswordPage = props => {
                       <div className="avatar-md profile-user-wid mb-4">
                         <span className="avatar-title rounded-circle bg-light">
                           <img
-                           style={{width: "70px"}}
+                            style={{ width: "70px" }}
                             src={logo}
                             alt=""
                             className="rounded-circle"
-                            // height="34"
+                          // height="34"
                           />
                           {/* <h3>Ace</h3> */}
                         </span>
@@ -101,11 +140,7 @@ const ForgetPasswordPage = props => {
 
                     <Form
                       className="form-horizontal"
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        validation.handleSubmit();
-                        return false;
-                      }}
+                      onSubmit={(e) => { formsubmit(e) }}
                     >
                       <div className="mb-3">
                         <Label className="form-label">Email</Label>
@@ -114,16 +149,18 @@ const ForgetPasswordPage = props => {
                           className="form-control"
                           placeholder="Enter email"
                           type="email"
-                          onChange={validation.handleChange}
+                          onChange={(e) => { handleChange(e) }}
+                          // onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
-                          value={validation.values.email || ""}
-                          invalid={
-                            validation.touched.email && validation.errors.email ? true : false
-                          }
+                          value={form.email}
+                          // value={validation.values.email || ""}
+                          // invalid={
+                          //   validation.touched.email && validation.errors.email ? true : false
+                          // }
                         />
-                        {validation.touched.email && validation.errors.email ? (
+                        {/* {validation.touched.email && validation.errors.email ? (
                           <FormFeedback type="invalid">{validation.errors.email}</FormFeedback>
-                        ) : null}
+                        ) : null} */}
                       </div>
                       <Row className="mb-3">
                         <Col className="text-end">
@@ -131,7 +168,7 @@ const ForgetPasswordPage = props => {
                             className="btn btn-primary w-md "
                             type="submit"
                           >
-                            Reset
+                            Submit
                           </button>
                         </Col>
                       </Row>
@@ -155,6 +192,7 @@ const ForgetPasswordPage = props => {
           </Row>
         </Container>
       </div>
+      <Toaster/>
     </React.Fragment>
   );
 };

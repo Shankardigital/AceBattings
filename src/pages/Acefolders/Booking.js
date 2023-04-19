@@ -8,7 +8,7 @@ import { Row, Col, Card, CardBody, CardTitle, CardSubtitle, Input, Button, Table
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 import { Link } from "react-router-dom";
 import img1 from "../../assets/images/letast/acelogo.png"
-import { Cost } from "pages/Tables/EditableCol";
+// import { Cost } from "pages/Tables/EditableCol";
 import Select from 'react-select'
 import Flatpickr from 'react-flatpickr'
 
@@ -35,7 +35,7 @@ const ResponsiveTables = () => {
         <React.Fragment>
             <div className="page-content">
                 <div className="container-fluid">
-                    <Breadcrumbs title="Sell a plan" breadcrumbItem="Sell a plan" />
+                    <Breadcrumbs title="Ace Batting" breadcrumbItem="Sell a plan" />
                     <Row>
                         <Col>
                             <Card className="p-4">
@@ -58,7 +58,7 @@ const ResponsiveTables = () => {
                                                 <option value="Pay as you go">Pay as you go</option>
                                                 <option value="Basic">Basic</option>
                                                 <option value="Pro">Pro</option>
-                                                <option value="CricketBeginners">Cricket - Beginners</option>
+                                                <option value="CircketBeginners">Circket - Beginners</option>
                                                 <option value="BaseballBeginners">Baseball- Beginners</option>
                                                 <option value="BaseballBeginners">Line Rental</option>
                                             </select>
@@ -92,7 +92,7 @@ const ResponsiveTables = () => {
                                     </Row>
                                     <div className="text-end mt-3">
                                         <Button onClick={toggle} color="success m-1" outline>Submit <i className="bx bx-check-circle"></i></Button>
-                                        <Link to="/plans">
+                                        <Link to="/subscribe">
                                             <Button type="button" color="danger m-1" outline>Cancel <i className="bx bx-x-circle"></i></Button>
                                         </Link>
                                     </div>
